@@ -1,7 +1,7 @@
 server:
   port: 8761
-  display-name: eurekaServer
-  contextPath: /eurekaServer
+  display-name: eureka
+  #contextPath: /eureka # springboot直接启动时，放开contextPath配置表示访问路径加上该配置，需要在eureka中添加本段，若部署到外部tomcat需要注释本段，因为tomcat会做相关目录配置
 
 spring:
   application:
@@ -22,7 +22,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://${security.user.name}:${security.user.password}@localhost:8761/eurekaServer/eureka/
+      defaultZone: http://${security.user.name}:${security.user.password}@localhost:8761/eureka/eureka/
     register-with-eureka: false
     fetch-registry: false
   instance:
